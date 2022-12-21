@@ -4,6 +4,11 @@ import alistair from '../assets/people/alistair.jpeg';
 import type {Speaker} from '../client/types';
 import Image from 'next/image';
 import {HiOutlineTicket} from 'react-icons/hi';
+import {PageConfig} from 'next';
+
+export const config: PageConfig = {
+	unstable_runtimeJS: false,
+};
 
 function SpeakerListItem(speaker: Speaker) {
 	return (
