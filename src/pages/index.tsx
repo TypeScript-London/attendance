@@ -41,16 +41,16 @@ function SpeakerListItem(speaker: Speaker) {
 								</div>
 							</div>
 
-							<div className="w-full aspect-video flex">
-								{speaker.presentation.youtube && (
+							{speaker.presentation.youtube && (
+								<div className="w-full aspect-video flex">
 									<iframe
 										className="h-full w-full rounded-md shadow-lg"
 										src={`https://www.youtube-nocookie.com/embed/${speaker.presentation.youtube}`}
 										title="YouTube video player"
 										loading="lazy"
 									/>
-								)}
-							</div>
+								</div>
+							)}
 						</>
 					)}
 				</div>
