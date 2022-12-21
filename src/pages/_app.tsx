@@ -1,6 +1,17 @@
-import {AppProps} from 'next/app';
 import 'tailwindcss/tailwind.css';
+import '../styles/globals.css';
+
+import {AppProps} from 'next/app';
+import Head from 'next/head';
 
 export default function App({Component, pageProps}: AppProps) {
-	return <Component {...pageProps} />;
+	return (
+		<>
+			<Head>
+				<title>TypeScript London</title>
+			</Head>
+
+			<Component {...pageProps} />
+		</>
+	);
 }

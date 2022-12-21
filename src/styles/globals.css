@@ -1,0 +1,3 @@
+body {
+	@apply bg-gradient-to-t from-ts-900 to-ts-500 text-ts-100;
+}
