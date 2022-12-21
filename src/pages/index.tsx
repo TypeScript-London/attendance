@@ -155,13 +155,25 @@ export default function Home() {
 						<SpeakerListItem
 							image={andy}
 							name="Andy Jefferson"
-							description="Founder. Digital nomad. Formerly at Neo4j, Tractable & Apple. Loves TypeScripts. Dislikes servers, vpcs and kubernetes."
+							description="Founder. Digital nomad. Formerly at Neo4j, Tractable & Apple. Loves TypeScript. Dislikes servers, vpcs and kubernetes."
 						/>
 
 						<SpeakerListItem
 							image={alistair}
 							name="Alistair Smith"
 							description="18 year old TypeScripter. Open source contributor. Building a cloud platform which doesn't require an expensive certificate to use."
+							presentation={{
+								title: 'Parse, not validate',
+								description: (
+									<p>
+										A deep dive into how libraries such as Zod make our code
+										more reliable and easier to maintain. We'll look at how they
+										work, how they're implemented and how you can use them in
+										your own projects. Finally, we'll build a library of our own
+										together.
+									</p>
+								),
+							}}
 						/>
 					</ul>
 				</div>
