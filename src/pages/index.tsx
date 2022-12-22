@@ -10,6 +10,19 @@ export const config: PageConfig = {
 	unstable_runtimeJS: false,
 };
 
+function ExternalLink(
+	props: Omit<JSX.IntrinsicElements['a'], 'target' | 'rel'>,
+) {
+	return (
+		<a
+			target="_blank"
+			rel="noopener noreferrer"
+			className="underline text-white"
+			{...props}
+		/>
+	);
+}
+
 function SpeakerListItem(speaker: Speaker) {
 	return (
 		<li className="space-y-4 p-6 shadow-md bg-white/10 rounded-md">
@@ -104,27 +117,22 @@ export default function Home() {
 					</p>
 
 					<div>
-						<a
+						<ExternalLink
 							href="https://forms.gle/TtoazhuGKwQTnwD1A"
-							target="_blank"
-							rel="noopener noreferrer"
 							className="hover:bg-ts-600 ring ring-white/50 bg-ts-700 px-8 py-1 rounded-full inline-flex items-center space-x-2"
 						>
 							<span>Attend</span>
 							<span>
 								<HiOutlineTicket />
 							</span>
-						</a>
+						</ExternalLink>
 					</div>
 
 					<p>
 						A really huge thank you to{' '}
-						<a
-							className="underline text-white"
-							href="https://twitter.com/SimonWijckmans"
-						>
+						<ExternalLink href="https://twitter.com/SimonWijckmans">
 							Simon
-						</a>{' '}
+						</ExternalLink>{' '}
 						who has immensely helped me organise this event. Please do follow
 						him on Twitter!
 					</p>
@@ -155,7 +163,22 @@ export default function Home() {
 						<SpeakerListItem
 							image={andy}
 							name="Andy Jefferson"
-							description="Founder. Digital nomad. Formerly at Neo4j, Tractable & Apple. Loves TypeScript. Dislikes servers, vpcs and kubernetes."
+							description="Startup CTO, digital nomad, O’Reilly author, Ex-(Apple, Neo4j). Loves TypeScript, clouds and distributed systems. Dislikes servers, VPCs and Kubernetes."
+							presentation={{
+								title: 'A TypeScript-first cloud data startup',
+								description: (
+									<p>
+										A high-speed tour of TypeScript-first techniques used at{' '}
+										<ExternalLink href="https://bobsled.co">
+											Bobsled
+										</ExternalLink>{' '}
+										to build a cross-cloud data startup. We’ll cover end-to-end
+										type safety in a range of situations (not just
+										client-server), writing infrastructure-as-code using
+										Typescript and monorepo tips.
+									</p>
+								),
+							}}
 						/>
 
 						<SpeakerListItem
@@ -163,14 +186,15 @@ export default function Home() {
 							name="Alistair Smith"
 							description="18 year old TypeScripter. Open source contributor. Building a cloud platform which doesn't require an expensive certificate to use."
 							presentation={{
-								title: 'Parse, not validate',
+								title: "Parse, don't validate",
 								description: (
 									<p>
-										A deep dive into how libraries such as Zod make our code
-										more reliable and easier to maintain. We'll look at how they
-										work, how they're implemented and how you can use them in
-										your own projects. Finally, we'll build a library of our own
-										together.
+										A deep dive into how libraries such as{' '}
+										<ExternalLink href="https://zod.dev">Zod</ExternalLink> make
+										our code more reliable and easier to maintain. We'll look at
+										how they work, how they're implemented and how you can use
+										them in your own projects. Finally, we'll build a library of
+										our own together.
 									</p>
 								),
 							}}
