@@ -116,15 +116,29 @@ export default function Home() {
 						a pub nearby for some 🍻 drinks.
 					</p>
 
+					<div className="bg-ts-900 text-ts-200 shadow-md text-lg rounded-md px-2 py-1 space-y-1">
+						<p className="text-xl">⚠️</p>
+						<p>
+							We've reached capacity for this event, but spots might open back
+							up if people can't make it. If you're interested in attending,
+							please keep an eye out on{' '}
+							<ExternalLink href="https://twitter.com/alistaiir">
+								Alistair's Twitter
+							</ExternalLink>{' '}
+							account for updates.
+						</p>
+					</div>
+
 					<div>
 						<ExternalLink
 							href="https://forms.gle/TtoazhuGKwQTnwD1A"
-							className="hover:bg-ts-600 ring ring-white/50 bg-ts-700 px-8 py-1 rounded-full inline-flex items-center space-x-2"
+							className="opacity-75 cursor-not-allowed hover:bg-ts-600 ring ring-white/50 bg-ts-700 px-8 py-1 rounded-full inline-flex items-center space-x-2"
 						>
 							<span>Attend</span>
 							<span>
 								<HiOutlineTicket />
 							</span>
+							<span>(50/50)</span>
 						</ExternalLink>
 					</div>
 
