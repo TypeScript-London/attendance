@@ -3,6 +3,7 @@
 /** @type {import("tailwindcss").Config} */
 module.exports = {
 	content: ['./src/**/*.{ts,tsx,css,md,mdx,js,jsx}'],
+
 	theme: {
 		fontFamily: {
 			sans: [
@@ -35,5 +36,6 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
+
+	plugins: [require('@tailwindcss/forms')],
 };

@@ -4,11 +4,16 @@ import alistair from '../assets/people/alistair.jpeg';
 import type {Speaker} from '../client/types';
 import Image from 'next/image';
 import {HiOutlineTicket} from 'react-icons/hi';
-import {PageConfig} from 'next';
+import {GetStaticProps, PageConfig} from 'next';
 
 export const config: PageConfig = {
 	unstable_runtimeJS: false,
 };
+
+interface Props {
+	attendees: number;
+	capacity: number;
+}
 
 function ExternalLink(
 	props: Omit<JSX.IntrinsicElements['a'], 'target' | 'rel'>,
@@ -72,7 +77,7 @@ function SpeakerListItem(speaker: Speaker) {
 	);
 }
 
-export default function Home() {
+export default function Home(props: Props) {
 	return (
 		<div className="max-w-7xl mx-auto px-4 py-24 space-y-24">
 			<div>
@@ -116,18 +121,20 @@ export default function Home() {
 						a pub nearby for some 🍻 drinks.
 					</p>
 
-					<div className="bg-ts-900 text-ts-200 shadow-md text-lg rounded-md px-2 py-1 space-y-1">
-						<p className="text-xl">⚠️</p>
-						<p>
-							We've reached capacity for this event, but spots might open back
-							up if people can't make it. If you're interested in attending,
-							please keep an eye out on{' '}
-							<ExternalLink href="https://twitter.com/alistaiir">
-								Alistair's Twitter
-							</ExternalLink>{' '}
-							account for updates.
-						</p>
-					</div>
+					{props.attendees >= props.capacity && (
+						<div className="bg-ts-900 text-ts-200 shadow-md text-lg rounded-md px-2 py-1 space-y-1">
+							<p className="text-xl">⚠️</p>
+							<p>
+								We've reached capacity for this event, but spots might open back
+								up if people can't make it. If you're interested in attending,
+								please keep an eye out on{' '}
+								<ExternalLink href="https://twitter.com/alistaiir">
+									Alistair's Twitter
+								</ExternalLink>{' '}
+								account for updates.
+							</p>
+						</div>
+					)}
 
 					<div>
 						<ExternalLink
@@ -138,7 +145,9 @@ export default function Home() {
 							<span>
 								<HiOutlineTicket />
 							</span>
-							<span>(50/50)</span>
+							<span>
+								({props.attendees}/{props.capacity})
+							</span>
 						</ExternalLink>
 					</div>
 
@@ -219,3 +228,13 @@ export default function Home() {
 		</div>
 	);
 }
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+	return {
+		props: {
+			capacity: 50,
+			attendees: 50,
+		},
+		revalidate: 120,
+	};
+};

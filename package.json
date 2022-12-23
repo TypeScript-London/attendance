@@ -8,13 +8,25 @@
 		"start": "next start"
 	},
 	"dependencies": {
+		"@prisma/client": "^4.8.0",
+		"argon2": "^0.30.2",
+		"cookie": "^0.5.0",
+		"dayjs": "^1.11.7",
+		"envsafe": "^2.0.3",
+		"ioredis": "^5.2.4",
 		"next": "13.0.7",
 		"nextkit": "^3.4.3",
+		"pika-id": "^1.1.1",
+		"prisma": "^4.8.0",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"react-icons": "^4.7.1"
+		"react-icons": "^4.7.1",
+		"swr": "^2.0.0",
+		"zod": "^3.20.2"
 	},
 	"devDependencies": {
+		"@tailwindcss/forms": "^0.5.3",
+		"@types/cookie": "^0.5.1",
 		"@types/node": "^18.11.17",
 		"@types/react": "^18.0.26",
 		"autoprefixer": "^10.4.13",
