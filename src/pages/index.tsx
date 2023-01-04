@@ -1,5 +1,6 @@
-import orta from '../assets/people/orta.jpeg';
+import john from '../assets/people/john.jpeg';
 import andy from '../assets/people/andy.jpeg';
+import brendan from '../assets/people/brendan.jpeg';
 import alistair from '../assets/people/alistair.jpeg';
 import type {Speaker} from '../client/types';
 import Image from 'next/image';
@@ -157,24 +158,6 @@ export default function Home() {
 
 					<ul className="space-y-4">
 						<SpeakerListItem
-							image={orta}
-							name="Orta Therox"
-							description="Ex TypeScript Compiler team, OSS person touching many ecosystems, doing something with games ATM but can't talk about it."
-							presentation={{
-								title: 'How the TypeScript compiler compiles',
-								description: (
-									<p>
-										A systems-level look at the TypeScript compiler. How it
-										converts a file into something into data, checks the
-										validity of that data and finally creates .js files on the
-										disk.
-									</p>
-								),
-								youtube: 'X8k_4tZ16qU',
-							}}
-						/>
-
-						<SpeakerListItem
 							image={andy}
 							name="Andy Jefferson"
 							description="Startup CTO, digital nomad, O’Reilly author, Ex-(Apple, Neo4j). Loves TypeScript, clouds and distributed systems. Dislikes servers, VPCs and Kubernetes."
@@ -190,6 +173,45 @@ export default function Home() {
 										type safety in a range of situations (not just
 										client-server), writing infrastructure-as-code using
 										Typescript and monorepo tips.
+									</p>
+								),
+							}}
+						/>
+
+						<SpeakerListItem
+							image={john}
+							name="John Reilly"
+							description="Full time TypeScript open source wizard. Works on DefinitelyTyped and ts-loader, among many others"
+							presentation={{
+								title: 'Me & Open Source',
+								description: (
+									<p>
+										The story of how I got into OSS. My engineering journey,
+										covering a bit of DefinitelyTyped, ts-loader and other open
+										source adventures
+									</p>
+								),
+							}}
+						/>
+
+						<SpeakerListItem
+							image={brendan}
+							name="Brendan Coll"
+							description="Systems Engineer at Cloudflare, and creator of Miniflare. Loves making developers' lives easier. Currently building tooling for Cloudflare Workers."
+							presentation={{
+								title: 'Generating TypeScript with TypeScript',
+								description: (
+									<p>
+										A deep-dive into how we automatically generate TypeScript
+										definitions for the V8-based runtime that powers{' '}
+										<ExternalLink href="https://workers.cloudflare.com">
+											Cloudflare Workers
+										</ExternalLink>
+										. We'll give an overview of our previous approach using C++
+										AST parsing, then discuss recent improvements using the
+										TypeScript compiler API, and how we enhance auto-generated
+										definitions with user-written overrides to improve
+										ergonomics.
 									</p>
 								),
 							}}
