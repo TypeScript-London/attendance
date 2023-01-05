@@ -181,7 +181,7 @@ export default function Home() {
 						<SpeakerListItem
 							image={john}
 							name="John Reilly"
-							description="Full time TypeScript open source wizard. Works on DefinitelyTyped and ts-loader, among many others"
+							description="Group Principal Engineer at Investec. Full time TypeScript open source wizard. Works on DefinitelyTyped and ts-loader, Docusaurus among many others"
 							presentation={{
 								title: 'Me & Open Source',
 								description: (
